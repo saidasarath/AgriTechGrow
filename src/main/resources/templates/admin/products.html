@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" th:replace="admin/base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <section>
+        <h1>Products</h1>
+        
+        <!-- <form th:action="@{/admin/editproduct}" method="post"> -->
+        <div >
+        <div  th:each="product : ${products}">
+            <div class="card" th:with="url ='/img/products/'+${product.getProduct_image()}">
+                <img th:src="@{${url}}" alt="Avatar" style="width:100%;border: 1px solid black;">
+                <div class="container">
+                  <b><div style="display: flex;"><h4>Name : </h4><b><input style="border:none;font-size: large;" name = "product_name" th:value="${product.getProduct_name()}" readonly/></b> </div></b>
+                  <b><div style="display: flex;"><h4>Cost : </h4><b><input style="border:none;font-size: large;" name = "cost" th:value="${product.getCost()}" readonly/></b> </div></b>
+                  <b><div style="display: flex;"><h4>Rating : </h4><b><input style="border:none;font-size: large;" name = "rating" th:value="${product.getRating()}" readonly/></b> </div></b>
+                </div>
+                <div style="text-align: center;">
+                <!-- <input type="submit" value="Edit" style="width: 100px;background-color: cornflowerblue;border-radius: 5px;"/> -->
+            </div>
+            </div>
+        </div>
+        </div>
+    <!-- </form> -->
+    </section>
+</body>
+</html>

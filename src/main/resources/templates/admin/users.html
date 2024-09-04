@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" th:replace="admin/base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <section>
+        <h1>Users</h1>
+        <table style="width:80%;border:1px solid black;">
+            <tr>
+                <th style="border:1px solid black;height:50px;">Username</th>
+                <th style="border:1px solid black;">Email</th>
+                <th style="border:1px solid black;">Mobile</th>
+                <th style="border:1px solid black;">Role</th>
+                <th style="border:1px solid black;">Image_URL</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td style="border:1px solid black;height:40px; background-color:rgb(15,154,220)" th:text="${user.getUsername()}"></td>
+                <td style="border:1px solid black; background-color:rgb(178,235,242)" th:text="${user.getEmail()}"></td>
+                <td style="border:1px solid black; background-color:rgb(178,235,242)" th:text="${user.getMobile()}"></td>
+                <td style="border:1px solid black; background-color:rgb(178,235,242)" th:text="${user.getRole()}"></td>
+                <td style="border:1px solid black; background-color:rgb(178,235,242)" th:text="${user.getImage()}"></td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>

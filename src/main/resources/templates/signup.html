@@ -1,0 +1,53 @@
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div th:if="${message.getContent()} != null">
+        <div th:class="${message.getType()}" role="alert">
+            <span th:text="${message.getContent()}"></span>
+        </div>
+        </div>
+        <div style="display: flex;">
+            <div id="form" >
+                <b><h3>Sign Up</h3></b>
+                <div style="margin-top: 20px;margin-bottom: 25px;">
+                <img th:src="@{../img/fb.png}" width="25px" /> &nbsp;&nbsp;
+                <img th:src="@{../img/instagram.png}" width="25px" />&nbsp;&nbsp;
+                <img th:src="@{../img/twitter.png}" width="25px" />
+                </div>
+                <form th:action="@{/processregister}" method="post">
+                    <div style="display: flex;">
+                    <img th:src="@{../img/username.png}" width="30px" height="30px"/>
+                    <input class="input" type="text" name="username" placeholder="Username" required/><br/>
+                    </div>
+                    <div style="display: flex;">
+                        <img th:src="@{../img/email.png}" width="25px" height="25px"/>
+                        <input class="input" type="email" name="email" placeholder="Email" required/><br/>
+                    </div>
+                    <div style="display: flex;">
+                        <img th:src="@{../img/phone.png}" width="25px" height="25px"/>
+                        <input class="input" type="text" name="mobile" placeholder="Mobile" required/><br/>
+                    </div>
+                    <div style="display: flex;">
+                    <img th:src="@{../img/password.png}" width="30px" height="30px"/>
+                    <input class="input" type="password" name="password" placeholder="Password" required/><br/>
+                    </div>
+                    <div style="display: flex;">
+                        <img th:src="@{../img/confirm.png}" width="30px" height="30px"/>
+                        <input class="input" type="password" name="confirmPassword" placeholder="Confirm Password" required/><br/>
+                    </div>
+                    <div style="display: flex;">
+                        <input class="btn" style="width: 130px;background-color: black;color: white;" type="submit" />
+                        <input class="btn" style="width: 130px; margin-left: 30px;background-color: white; color: black;" type="reset" value="Reset" />
+                    </div>
+                    
+                </form>
+            </div>
+            
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+    
+    <body>
+        <section>
+             <h1 style="text-align: center;">Buy Products</h1>
+             <form>
+             <div th:each="product : ${products}">
+                <div class="card" th:with="url ='/img/products/'+${product.getProduct_image()}" >
+                    <div class="card-image">
+                        <img class="img" th:src="@{${url}}" alt="Image">
+                    </div>
+                    <div class="card-content">
+                        <h3>Product : <span style="color: black;" th:text="${product.getProduct_name()}"></span></h3>
+                        <h5>Cost : <span style="color: black;" th:text="${product.getCost()}"></span></h5>
+                        <h5>Rating : <span style="color: black;" th:text="${product.getRating()}"></span></h5>
+                        <button type="submit" style="width: 60px;border-radius: 4px;color: white ; background-color:#4070f4 ;">Buy</button>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="about-us">
+        <div class="about">
+            <img th:src="@{../img/background.jpg}" class="pic">
+            <div class="text">
+              <h2>About Us</h2>
+              <h5><span>AgriTechGrow</span></h5>
+                <p> we believe in connecting consumers directly with farmers, cutting out the middleman and ensuring fair prices for both. Our mission is to empower farmers by providing them a platform to showcase their produce and connect with conscious consumers seeking fresh, sustainably sourced products. By fostering a direct relationship, we strive to create a more transparent and equitable food ecosystem. Join us in supporting local farmers and enjoying the benefits of a direct farmer-to-table experience.</p>
+              <div class="data">
+              <!-- <a th:href="@{/user/index}" class="hire">Hire Me</a> -->
+              </div>
+            </div>
+          </div>
+    </section>
+</body>
+</html>

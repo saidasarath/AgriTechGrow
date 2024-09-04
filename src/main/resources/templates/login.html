@@ -1,0 +1,39 @@
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div >
+            <div id="form" >
+                <b><h3>Login</h3></b>
+                <div style="margin-top: 20px;margin-bottom: 25px;">
+                <img th:src="@{../img/fb.png}" width="25px" /> &nbsp;&nbsp;
+                <img th:src="@{../img/instagram.png}" width="25px" />&nbsp;&nbsp;
+                <img th:src="@{../img/twitter.png}" width="25px" />
+                </div>
+                <form th:action="@{/dologin}" method="post">
+                    <div style="display: flex;">
+                    <img th:src="@{../img/username.png}" width="30px" height="30px"/>
+                    <input class="input" name="username" type="text" placeholder="Username"/><br/>
+                    </div>
+                    <div style="display: flex;">
+                    <img th:src="@{../img/password.png}" width="30px" height="30px"/>
+                    <input class="input" name="password" type="password" placeholder="Password" required/><br/>
+                    </div>
+                    <input class="btn" type="submit" value="Login"  required/><br/>
+                    <a style="text-decoration: underline;color:black;font-size: 80%;margin-left: 5px;" th:href="@{/forgetpassword}">Forget password?</a><br/>
+
+                        <!-- <input type="checkbox"/><label>Remember Me</label> -->
+                    
+                </form>
+                
+
+            </div>
+        </div>
+        
+        
+    </section>
+</body>
+</html>

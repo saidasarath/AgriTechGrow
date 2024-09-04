@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" xmlns:th="http://www.thymeleaf.org" th:replace="admin/base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <section>
+        <div th:if="${msg.getContent()} != null">
+            <div th:class="${msg.getType()}" role="alert">
+                <span th:text="${msg.getContent()}"></span>
+            </div>
+        </div>
+        <h1>Add Product</h1>
+    <form th:action="@{/admin/doaddproduct}" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Product name:</label>
+            <input type="text"  name="product_name" required>
+        </div>
+        <div class="form-group">
+            <label for="cost">Cost:</label>
+            <input type="number"  name="cost" required>
+        </div>
+        <div class="form-group">
+            <label for="file">Image:</label>
+            <input type="file"  name="file" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    </section>
+</body>
+</html>
